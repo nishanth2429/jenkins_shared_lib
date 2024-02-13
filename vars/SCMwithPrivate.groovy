@@ -3,7 +3,7 @@ def call(Map stageParams) {
     checkout([
         $class: 'GitSCM',
         branches: [[name:  stageParams.branch ]],
-        ids: [[gitids: stageParams.credentialsId ]],
+        credentialsId: [[credentialsId: stageParams.credentialsId ]],
         userRemoteConfigs: [[ url: stageParams.url ]]
     ])
   }
