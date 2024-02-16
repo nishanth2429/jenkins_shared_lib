@@ -7,7 +7,6 @@ def call(credentialsId, String projectName, String projectKey){
     withSonarQubeEnv(credentialsId) {
         sh ''' 
         $SCANNER_HOME/bin/sonar-scanner -Dsonar.projectName=${projectName} -Dsonar.projectKey=${projectKey} -Dsonar.java.binaries=.
-        docker rmi ${ecr_repoName}:latest ${aws_account_id}.dkr.ecr.${region}.amazonaws.com/${ecr_repoName}:lates        
         '''
     }
 }
