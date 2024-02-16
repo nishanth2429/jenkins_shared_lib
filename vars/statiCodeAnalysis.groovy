@@ -1,4 +1,4 @@
-def call(String projectName, String projectKey){
+def call(projectName, projectKey){
 
     // withSonarQubeEnv(credentialsId: credentialsId) {
   
