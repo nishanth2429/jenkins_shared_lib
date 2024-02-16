@@ -4,7 +4,7 @@ def call(String projectName, String projectKey){
   
          // sh 'mvn clean package sonar:sonar'
         // sh ''' $SCANNER_HOME/bin/sonar-scanner -Dsonar.projectName=project-1 -Dsonar.projectKey=project-1 -Dsonar.java.binaries=.  '''
-    withSonarQubeEnv(credentialsId:credentialsId) {
+    withSonarQubeEnv('sonar-server') {
         sh ''' 
         $SCANNER_HOME/bin/sonar-scanner -Dsonar.projectName=${projectName} -Dsonar.projectKey=${projectKey} -Dsonar.java.binaries=.
         '''
