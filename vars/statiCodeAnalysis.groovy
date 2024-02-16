@@ -18,14 +18,15 @@
 //         sh ''' $SCANNER_HOME/bin/sonar-scanner -Dsonar.projectName=${Pname} -Dsonar.projectKey=${Pid} -Dsonar.java.binaries=.  '''
 //     }
 // }
+
+ // -Dsonar.sources='.' \
+ //            -Dsonar.java.binaries='./build/classes/java/main'
 def call(String Pname, String Pid) {
     withSonarQubeEnv('sonar-server') {
         sh """
             $SCANNER_HOME/bin/sonar-scanner \
             -Dsonar.projectName='${Pname}' \
             -Dsonar.projectKey='${Pid}' \
-            // -Dsonar.sources='.' \
-            // -Dsonar.java.binaries='./build/classes/java/main'
             -Dsonar.java.binaries='.'
         """
     }
