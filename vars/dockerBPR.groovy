@@ -1,8 +1,7 @@
 def call(String project, String hubUser){
     
     sh """
-     sudo usermod -aG docker $USER
-     sudo chmod 666 /var/run/docker.sock
+
      docker image build -t '${hubUser}'/'${project}' . 
      docker image tag '${hubUser}'/'${project}':latest
      docker login -u nishanth00 -p Nishanth@00
@@ -11,3 +10,6 @@ def call(String project, String hubUser){
      
     """
 }
+
+     // sudo usermod -aG docker $USER
+     // sudo chmod 666 /var/run/docker.sock
