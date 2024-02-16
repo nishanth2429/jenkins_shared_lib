@@ -1,5 +1,5 @@
 // def call(projectName, projectKey){
-def call(projectName, projectKey){
+def call(){
 
     // withSonarQubeEnv(credentialsId: credentialsId) {
   
