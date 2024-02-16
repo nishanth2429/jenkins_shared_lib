@@ -24,8 +24,9 @@ def call(String Pname, String Pid) {
             $SCANNER_HOME/bin/sonar-scanner \
             -Dsonar.projectName='${Pname}' \
             -Dsonar.projectKey='${Pid}' \
-            -Dsonar.sources='.' \
-            -Dsonar.java.binaries='./build/classes/java/main'
+            // -Dsonar.sources='.' \
+            // -Dsonar.java.binaries='./build/classes/java/main'
+            -Dsonar.java.binaries='.'
         """
     }
 }
